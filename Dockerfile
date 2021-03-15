@@ -22,7 +22,7 @@ FROM alpine:3.13.2
 ARG peer_listen="0.0.0.0:12345"
 ENV peer_listen=${peer_listen}
 
-ARG http_listen="0.0.0.0:80"
+ARG http_listen="0.0.0.0:8080"
 ENV http_listen=${http_listen}
 
 ARG name="seedling"
@@ -42,6 +42,6 @@ RUN chmod +x /entrypoint.sh
 
 USER ${USER}:${USER}
 
-EXPOSE 12345 80
+EXPOSE 12345 8080
 
 ENTRYPOINT [ "/entrypoint.sh" ]
