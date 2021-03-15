@@ -8,6 +8,8 @@ RUN apk update
 RUN apk add yarn git musl-dev --no-cache
 
 RUN git clone https://github.com/radicle-dev/radicle-bins.git
+WORKDIR /usr/src/radicle-bins
+RUN git checkout f1462b9
 WORKDIR /usr/src/radicle-bins/seed/ui
 RUN yarn && yarn build
 
